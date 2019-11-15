@@ -69,7 +69,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return firstName + lastName + "! Thank you for registering." + "\nemail: " + email + "Phone Number: " + phoneNumber;
+		return String.format("%s %s! Thank you for registering.\nemail: %s\n%s", firstName, lastName, email, phoneNumber);
 	}
 
 }

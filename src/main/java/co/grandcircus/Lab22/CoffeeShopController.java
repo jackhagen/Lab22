@@ -14,7 +14,7 @@ public class CoffeeShopController {
 	@RequestMapping("/")
 	public ModelAndView form() {
 
-		ModelAndView mv = new ModelAndView("index", "CHANGE_ME", "CHANGE_ME_TOO");
+		ModelAndView mv = new ModelAndView("index", "CHANGE_ME", "CHANGE_ME_TOO"); // CHAAANGE MEEEE
 		mv.addObject("form",
 				p.getFirstName() + " " + p.getLastName() + p.getEmail() + p.getPhoneNumber() + p.getPassword());
 

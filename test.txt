@@ -1,0 +1,3 @@
+	<!-- Hello, ${p.getFirstName();} ${p.getLastName(); }! -->
+	<!-- Hello ${String.format("%s %s! Thank you for registering.", p.getFirstName(), p.getLastName());} -->
+	<!--  {email: %s\n%s", firstName, lastName, email, phoneNumber)}-->

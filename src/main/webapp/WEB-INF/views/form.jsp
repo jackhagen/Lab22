@@ -23,9 +23,10 @@
 		<br>
 		<br>Last Name: <input type="text" id="last" required> 
 		<br>
-		<br>Email: <input type="text" id="email" required> 
+		<br>Email: <input type="text" id="email" pattern="a@a.com" required> 
 		<br>
-		<br>Phone Number: <input type="number" id="phone" required> 
+		<br>Phone Number: <input type="tel" id="phone"  title="Please enter a telephone number in the format 123" required>
+		<!-- pattern="[0-9]{3}"-[0-9]{3}-[0-9]{4} -->
 		<br>
 		<br>Password: <input type="password" id="password" required>
 		<br>
@@ -55,12 +56,12 @@
 			alert("Please enter a longer last name!");
 			document.getElementById("last").focus();
 			return false;
-		} else if (phone.length > 9 || phone.length < 9){
+		} /* /* else if (phone.length > 9 || phone.length < 9){
 			alert("Please enter a valid phone number!");
 			console.log("done");
 			document.getElementById("phone").focus();
-			return false;
-		}
+			return false; */
+		} */
 	}
 	
 	var form = document.getElementById('specialSnowflake');

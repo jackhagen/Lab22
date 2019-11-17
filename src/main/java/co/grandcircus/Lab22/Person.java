@@ -10,6 +10,7 @@ public class Person {
 	private String email;
 	private String phoneNumber;
 	private String passWord;
+	private boolean specialOffersYes;
 
 	public Person() {
 		super();
@@ -22,6 +23,7 @@ public class Person {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.passWord = passWord;
+		this.specialOffersYes = specialOffersYes;
 		
 	}
 
@@ -66,7 +68,7 @@ public class Person {
 	public void setPassword(String passWord) {
 		this.passWord = passWord;
 	}
-
+	
 	@Override
 	public String toString() {
 		return String.format("%s %s! Thank you for registering.\nemail: %s\n%s", firstName, lastName, email, phoneNumber);

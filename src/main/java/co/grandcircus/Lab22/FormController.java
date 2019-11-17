@@ -20,9 +20,14 @@ public class FormController {
 	}
 
 	@PostMapping("/add-person")
-	public ModelAndView formDeets(@RequestParam("first") String f, @RequestParam("last") String l,
-			@RequestParam("email") String e, @RequestParam("phone") String pn, @RequestParam("password") String pw)
-{
+	public ModelAndView formDeets(
+			@RequestParam("first") String f, 
+			@RequestParam("last") String l,
+			@RequestParam("email") String e, 
+			@RequestParam("phone") String pn, 
+			@RequestParam("password") String pw, 
+			@RequestParam("specialOffersYes") boolean soy)
+	{
 		Person pFromForm = new Person(f, l, e, pn, pw);
 		return new ModelAndView("register-submit", "p", pFromForm);
 	}

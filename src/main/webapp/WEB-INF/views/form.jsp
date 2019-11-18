@@ -23,7 +23,7 @@
 		<br>
 		<br>Last Name: <input type="text" id="last" name="last" required> 
 		<br>
-		<br>Email: <input type="text" id="email" name="email"  title="Please enter an email like 'georgegmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required">
+		<br>Email: <input type="text" id="email" name="email" title="Please enter an email like 'georgegmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required">
 		<br>
 		<br>Phone Number: <input type="tel" id="phone" name="phone" title="Please enter a telephone number in the format 123-456-7890." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 		<br>
@@ -68,21 +68,9 @@
 				console.log("done");
 				document.getElementById("phone").focus();
 				return false; */
-			} 
+			//} 
 		}
-		
-		var form = document.getElementById('specialSnowflake');
-		form.onsubmit = function(){
-			console.log("calling validateInfo()");
-			validateInfo();
-		}
-		var button = document.getElementById('otherSnowflake');
-		button.onclick = validateInfo;
-		
-		var otherButton = document.getElementById('anything');
-		otherButton.onclick = function(){ alert("OH GOD MY HAIR")}
-		otherButton.onmouseover = function(){ alert("MY HAIR'S ON FIRE")}
 	</script>
-	
+	<script type="text/javascript" src="shared.js"></script>
 </body>
 </html>

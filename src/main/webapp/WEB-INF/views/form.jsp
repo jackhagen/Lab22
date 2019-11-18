@@ -23,12 +23,15 @@
 		<br>
 		<br>Last Name: <input type="text" id="last" name="last" required> 
 		<br>
-		<br>Email: <input type="text" id="email" name="email" pattern="\w+\u004A\w+.\w{2,3}" title="Please enter an email like 'george\u0040gmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required">
+		<br>Email: <input type="text" id="email" name="email">
+		<!-- pattern="\w+\@\w+.\w{2,3}"   title="Please enter an email like 'george\u0040gmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required"--> 
 		<!--  pattern="\w+\u004A\w+.\w{2,3}" title="Please enter an email like 'george\u0040gmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required>  -->
 		<br>
-		<br>Phone Number: <input type="tel" id="phone"  title="Please enter a telephone number in the format 123-456-7890." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+		<br>Phone Number: <input type="tel" id="phone" name="phone"
+		  title="Please enter a telephone number in the format 123-456-7890 or 1234567890." pattern="([0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{10})" required>
+		<!-- | -->
 		<br>
-		<br>Password: <input type="password" id="password" required>
+		<br>Password: <input type="password" id="password" name="password" required>
 		<br>
 		<br>
 		<input
@@ -59,8 +62,7 @@
 				console.log("done");
 				document.getElementById("phone").focus();
 				return false; */
-			} */
-		}
+			}
 		
 		var form = document.getElementById('specialSnowflake');
 		form.onsubmit = function(){

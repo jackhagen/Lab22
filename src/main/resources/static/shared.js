@@ -1,8 +1,9 @@
-var emailInput = document.getElementById('email');
+var formInput = document.getElementById('specialSnowflake');
 
 //This form works
 //emailInput.onchange = validateEmailWithoutParam;
-emailInput.onchange = handleEmailValidation;
+//emailInput.onchange = handleEmailValidation;
+//formInput.onsubmit = handleEmailValidation;
 //This form does not work.
 //emailInput.addEventListener("change", handleEmailValidation);
 //emailInput.addEventListener("change", handleEmailValidation());
@@ -24,7 +25,7 @@ emailInput.onchange = handleEmailValidation;
 //personInputForm.addEventListener('submit', validateEmail(emailInput.textContent));
 //
 function validateEmail(email) {
-	var patt = /\w+\w+\.\w{2,3}/;
+	var patt = /\w+@\w+\.\w{2,3}/;
 	if (!patt.test(email)) {
 		alert("This email does not match the requested pattern.");
 		return false;
@@ -33,9 +34,13 @@ function validateEmail(email) {
 }
 
 function validateEmailWithoutParam() {
-	return validateEmail(emailInput.textContent);
+	return validateEmail(formInput.textContent);
 }
 
 function handleEmailValidation(eventObject) {
-	return validateEmail(eventObject.target.textContent);
+	var validationResult = validateEmail(eventObject.target.textContent);
+	if (!validationResult) {
+		eventObject.target.textContent = "";
+	}
+	return validationResult;
 }

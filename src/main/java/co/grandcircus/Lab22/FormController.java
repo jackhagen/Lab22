@@ -26,9 +26,11 @@ public class FormController {
 			@RequestParam("email") String e, 
 			@RequestParam("phone") String pn, 
 			@RequestParam("password") String pw, 
-			@RequestParam("specialOffersYes") boolean soy)
+			@RequestParam("specialOffersYes") boolean soy,
+			@RequestParam(value = "financingFollowupYes", required = false) boolean ffy,
+			@RequestParam("financingFollowupMethod") String ffm)
 	{
-		Person pFromForm = new Person(f, l, e, pn, pw);
+		Person pFromForm = new Person(f, l, e, pn, pw, soy, ffy, ffm);
 		return new ModelAndView("register-submit", "p", pFromForm);
 	}
 

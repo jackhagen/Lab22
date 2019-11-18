@@ -18,12 +18,12 @@
 	<h1>Please fill in the form to register</h1>
 	<!-- the action referenced below should match a @RequestMapping
 		in the Controller to consume the input -->
-	<form action="add-person" method="post" id="specialSnowflake">
+	<form action="add-person" method="post" id="specialSnowflake" submit="return validateEmailWithoutParam()">
 		First Name: <input type="text" id="first" name="first" required> 
 		<br>
 		<br>Last Name: <input type="text" id="last" name="last" required> 
 		<br>
-		<br>Email: <input type="text" id="email" name="email">
+		<br>Email: <input type="text" id="email" name="email" pattern="\w{5,}@\w{5,}\.\w{2,3}">
 		<!-- pattern="\w+\@\w+.\w{2,3}"   title="Please enter an email like 'george\u0040gmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required"--> 
 		<!--  pattern="\w+\u004A\w+.\w{2,3}" title="Please enter an email like 'george\u0040gmail.com': with at least one word character before the \u0040, \u000A an \u0040, a domain with one or more word characters in the name, and a 2- or 3- character .domain.required>  -->
 		<br>
@@ -34,20 +34,35 @@
 		<br>
 		<br>
 		<fieldset>
-			<br>Would you like to sign up for our special offers? 
+			<br>Would you like to sign up for our special marketing offers? 
 			<div>
-				<input type="radio" name="specialOffersYes" id="offerSignupY" value="Yes"/>Yes
+				<input type="radio" name="specialOffersYes" id="offerSignupY" value="true" checked="true"/>Yes
 			</div>
 			<div>
-				<input type="radio" name="specialOffersYes" id="offerSignupN" value="No"/>No
+				<input type="radio" name="specialOffersYes" id="offerSignupN" value="false"/>No
 			</div>
 		</fieldset>
+		<fieldset>
+			<br>Would you like to know more about our financing options for premium coffee?
+			<input type="checkbox" name="financingFollowupYes" id="financeSignup" checked/>
+			<br>
+			<br>Please select an option:
+			<br>
+			<select name="financingFollowupMethod">
+				<option value="email">Send me informational emails</option>
+				<option value="broker" selected="1" default>Have a broker call me directly</option>
+				<option value="no">I don't want to know</option>
+			</select>
+		</fieldset>
+		
 		<br>
 		<input
-			class="btn-primary" type="submit" value="Register" id="otherSnowflake"> 
+			class="btn-primary" type="submit" value="Register" id="otherSnowflake">
+				<input
+			class="btn-primary" type="reset" value="Reset"> 
 	</form>
 	
-	<button class="btn-primary" id="anything">Click me!</button>
+	
 	
 	<script>
 		console.log("Please fill in the form to register");
@@ -71,16 +86,7 @@
 				console.log("done");
 				document.getElementById("phone").focus();
 				return false; */
-<<<<<<< HEAD
-			//} 
-=======
 			}
-		
-		var form = document.getElementById('specialSnowflake');
-		form.onsubmit = function(){
-			console.log("calling validateInfo()");
-			validateInfo();
->>>>>>> bfad073cbea3e1352cde050f19b3fcaf3004d162
 		}
 	</script>
 	<script type="text/javascript" src="shared.js"></script>
